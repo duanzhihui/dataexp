@@ -1,0 +1,51 @@
+# 默认连接ID
+default_conn_id: conn_oracle_1
+
+# 默认Excel输出ID
+default_output_id: output_1
+
+# 数据库连接配置
+connections:
+  conn_sqlserver_1:
+    type: sqlserver
+    conn_str: "mssql+pymssql://user:password@192.168.1.1:1433/dbname?charset=cp936"
+    description: "SQLServer开发环境"
+  
+  conn_mysql_1:
+    type: mysql
+    conn_str: "mysql+pymysql://user:password@192.168.1.1:3306/dbname?charset=utf8mb4"
+    description: "MySQL开发环境"
+    
+  conn_oracle_1:
+    type: oracle
+    conn_str: "oracle+cx_oracle://user:password@(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.1.1)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=SID)))"
+    description: "Oracle开发环境"
+
+  conn_impala_1:
+    type: impala
+    conn_str: "impala://user:password@192.168.1.1:21050/dbname"
+    description: "Impala开发环境"
+
+  conn_mysql_ssh:
+    type: mysql
+    conn_str: "mysql+pymysql://user:password@192.168.1.1:3306/dbname?charset=utf8mb4"
+    description: "MySQL开发环境ssh"
+    ssh_id: ssh_1
+
+# Excel输出配置
+outputs:
+  output_1:
+    path: D:\github\duanzhihui\dataexp\dataexp_test1.xlsx
+    description: "默认输出文件"
+  
+  output_2:
+    path: D:\github\duanzhihui\dataexp\dataexp_test2.xlsx
+    description: "第二输出文件"
+
+# SSH隧道配置
+sshs:
+  ssh_1:
+    host: 192.168.1.1
+    port: 1080
+    username: username
+    password: password
